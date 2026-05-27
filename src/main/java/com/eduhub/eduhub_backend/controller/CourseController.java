@@ -31,8 +31,6 @@ public class CourseController {
         return ResponseEntity.ok(courseService.getCourse(courseCode));
     }
 
-    // RequestParam
-
     @GetMapping("/search")
     public ResponseEntity<Course> getByParam(
             @RequestParam String code){
