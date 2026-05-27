@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class CourseService {
@@ -77,4 +78,13 @@ public class CourseService {
         return "Course Not Found";
     }
 
+    public Optional<Course> findCourse(
+            String courseCode){
+
+        return courses.stream()
+                .filter(course ->
+                        course.getCourseCode()
+                                .equalsIgnoreCase(courseCode))
+                .findFirst();
+    }
 }
