@@ -10,6 +10,11 @@ public class ErrorResponse {
     private String message;
     private String path;
 
+    // Empty Constructor
+    public ErrorResponse() {
+    }
+
+    // Parameterized Constructor
     public ErrorResponse(
             LocalDateTime timestamp,
             int status,
@@ -43,5 +48,37 @@ public class ErrorResponse {
 
     public String getPath() {
         return path;
+    }
+
+    // Setters
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    @Override
+    public String toString() {
+        return "ErrorResponse{" +
+                "timestamp=" + timestamp +
+                ", status=" + status +
+                ", error='" + error + '\'' +
+                ", message='" + message + '\'' +
+                ", path='" + path + '\'' +
+                '}';
     }
 }
