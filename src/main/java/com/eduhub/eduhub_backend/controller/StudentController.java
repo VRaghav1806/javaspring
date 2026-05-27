@@ -53,4 +53,16 @@ public class StudentController {
         System.out.println(student.getLastName());
         return ResponseEntity.ok(student);
     }
+
+    @PutMapping("{id}/update")
+    public ResponseEntity updateStudent(@PathVariable("id") int studentId,
+                                                 @RequestBody Student student){
+        return ResponseEntity.accepted().body(student);
+    }
+
+    @DeleteMapping("{id}/delete")
+    public ResponseEntity updateStudent(@PathVariable("id") int studentId){
+        return ResponseEntity.accepted().body("Data removed successfully");
+    }
 }
+
